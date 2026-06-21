@@ -1,0 +1,22 @@
+[
+  {
+    "title": "E-Throttle",
+    "tags": [
+      "hardware",
+      "firmware"
+    ],
+    "description": "Electronic throttle controller for Cambridge University's Formula Student team.",
+    "image": "",
+    "github": "https://github.com/"
+  },
+  {
+    "title": "RTOS Scheduling Benchmark",
+    "tags": [
+      "firmware",
+      "software"
+    ],
+    "description": "Comparative benchmark of FreeRTOS, Zephyr, and bare-metal scheduling on Cortex-M4. Measures context-switch latency, jitter, and throughput across multiple workload profiles.",
+    "image": "",
+    "github": "https://github.com/"
+  }
+]
