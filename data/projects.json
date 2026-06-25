@@ -5,18 +5,141 @@
       "hardware",
       "firmware"
     ],
-    "description": "Electronic throttle controller for Cambridge University's Formula Student team.",
-    "image": "",
-    "github": "https://github.com/"
+    "description": "Electronic Throttle Controller for Full Blue Racing (Cambridge University's Formula Student Team).",
+    "image": "assets/images/e-throttle_board.jpg",
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/tongclement/FBR-E-Throttle"
+      }
+    ],
+    "summary": "...",
+    "what_i_did": [
+      "...",
+      "...",
+      "..."
+    ],
+    "future_steps": "...",
+    "images": [
+      ""
+    ],
+    "skills": [
+      "KiCad",
+      "ESP32",
+      "Arduino C++"
+    ]
   },
   {
-    "title": "RTOS Scheduling Benchmark",
+    "title": "Lunar Rock Collection Robot",
+    "tags": [
+      "hardware",
+      "firmware",
+      "software"
+    ],
+    "description": "RoboHacks (YC Hackathon) Project: an autonomous robot that identifies, collects, and sorts rocks built with Innate's MARS Robot.",
+    "image": "assets/images/lunar_robot.jpg",
+    "links": [
+      {
+        "label": "Video",
+        "url": "https://www.youtube.com/watch?v=fFW-9yVCM8o"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/pkumar1025/robohacks_prototype"
+      }
+    ],
+    "summary": "...",
+    "what_i_did": [
+      "...",
+      "...",
+      "..."
+    ],
+    "results": "...",
+    "images": [
+      ""
+    ],
+    "skills": [
+      "Onshape",
+      "Teleoperation"
+    ]
+  },
+  {
+    "title": "Pan-Tilt-Zoom Tracking Camera",
     "tags": [
       "firmware",
       "software"
     ],
-    "description": "Comparative benchmark of FreeRTOS, Zephyr, and bare-metal scheduling on Cortex-M4. Measures context-switch latency, jitter, and throughput across multiple workload profiles.",
+    "description": "PTZ camera with realtime object detection and tracking.",
     "image": "",
-    "github": "https://github.com/"
+    "links": [
+      {
+        "label": "Video",
+        "url": "https://youtu.be/bwd5IqOa-WM"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/samuelliu1202/ptz_tracking_camera"
+      }
+    ],
+    "summary": "...",
+    "what_i_did": [
+      "Developed OpenCV and YOLO pipeline for object detection and localization.",
+      "Built Proportional Controller (Arduino, C++) with servo motor for pan-axis tracking."
+    ],
+    "future_steps": "...",
+    "images": [
+      ""
+    ],
+    "skills": [
+      "Python",
+      "Arduino C++",
+      "OpenCV"
+    ]
+  },
+  {
+    "title": "Mobile Manipulator Simulation",
+    "tags": [
+      "software"
+    ],
+    "description": "Simulate autonomous navigation and manipulation of a mobile robot.",
+    "image": "",
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/samuelliu1202/mobile-manipulator.git"
+      }
+    ]
+  },
+  {
+    "title": "Infrared Imaging Drone",
+    "tags": [
+      "hardware",
+      "firmware"
+    ],
+    "description": "Quadcopter drone with downward-facing infrared camera for birds-eye thermal imaging.",
+    "image": "",
+    "links": [
+      {
+        "label": "Video",
+        "url": "https://youtu.be/34Y6oeJE_qU"
+      }
+    ]
+  },
+  {
+    "title": "Roller Coaster Modeling and Simulation",
+    "tags": [
+      "software"
+    ],
+    "description": "CAD design a roller coaster and simulate its movement along a track.",
+    "image": "",
+    "links": [
+      {
+        "label": "Video",
+        "url": "https://youtu.be/lpSr80wKzYY?si=Z1nHc7KB6q8cffBq"
+      }
+    ],
+    "skills": [
+      "Solidworks"
+    ]
   }
 ]

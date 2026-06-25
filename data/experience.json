@@ -1,0 +1,60 @@
+[
+  {
+    "title": "Robotics Software Intern",
+    "company": "Industrial Next",
+    "dates": "Jun 2026 — Sep 2026",
+    "tags": [
+      "internship"
+    ],
+    "description": "Add your internship description here.",
+    "image": "",
+    "links": [
+      {
+        "label": "Company",
+        "url": "https://example.com"
+      }
+    ]
+  },
+  {
+    "title": "Robotics Intern",
+    "company": "Vantage Robotics",
+    "dates": "Mar 2026 — Apr 2026",
+    "tags": [
+      "internship"
+    ],
+    "description": "Add your internship description here.",
+    "image": "",
+    "links": []
+  },
+  {
+    "title": "Mechatronics Engineering Researcher",
+    "company": "Mechanical Systems Control Lab / UC Berkeley",
+    "dates": "Apr 2025 — Sep 2025",
+    "tags": [
+      "research"
+    ],
+    "description": "Add your research role description here.",
+    "image": "",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://example.com"
+      },
+      {
+        "label": "Poster",
+        "url": "https://example.com"
+      }
+    ]
+  },
+  {
+    "title": "Robotics Research Intern",
+    "company": "Boston University Robotics Lab",
+    "dates": "Jun 2024 — Aug 2024",
+    "tags": [
+      "research"
+    ],
+    "description": "Add your research role description here.",
+    "image": "",
+    "links": []
+  }
+]

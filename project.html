@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project — Samuel Liu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">SL</a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div id="project-detail">
+      <p class="empty-state">// loading...</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="mailto:syl63@cam.ac.uk">Email</a>
+      <a href="https://www.linkedin.com/in/samliu12/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/samuelliu1202" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      function slugify(title) {
+        return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+      }
+
+      const id = new URLSearchParams(location.search).get('id');
+      const detail = document.getElementById('project-detail');
+
+      if (!id) {
+        detail.innerHTML = '<p class="empty-state">// no project specified</p>';
+        return;
+      }
+
+      fetch('data/projects.json')
+        .then(r => {
+          if (!r.ok) throw new Error(r.status);
+          return r.json();
+        })
+        .then(projects => {
+          const p = projects.find(proj => slugify(proj.title) === id);
+          if (!p) {
+            detail.innerHTML = '<p class="empty-state">// project not found</p>';
+            return;
+          }
+
+          document.title = `${p.title} — Samuel Liu`;
+
+          const tags = p.tags.map(t => `<span class="tag tag-${t}">${t}</span>`).join('');
+          const links = (p.links || [])
+            .map(l => `<a href="${l.url}" class="card-link" target="_blank" rel="noopener">${l.label} ↗</a>`)
+            .join('');
+
+          const hero = p.image
+            ? `<img src="${p.image}" alt="${p.title}" class="detail-hero">`
+            : '';
+
+          const summary = p.summary ? `
+            <div class="detail-section">
+              <p class="section-label">Summary</p>
+              <p class="detail-text">${p.summary}</p>
+            </div>` : '';
+
+          const whatIDid = p.what_i_did && p.what_i_did.length ? `
+            <div class="detail-section">
+              <p class="section-label">What I did</p>
+              <ul class="detail-bullets">
+                ${p.what_i_did.map(item => `<li>${item}</li>`).join('')}
+              </ul>
+            </div>` : '';
+
+          const outcome = p.results ? `
+            <div class="detail-section">
+              <p class="section-label">Results</p>
+              <p class="detail-text">${p.results}</p>
+            </div>` : p.future_steps ? `
+            <div class="detail-section">
+              <p class="section-label">Future steps</p>
+              <p class="detail-text">${p.future_steps}</p>
+            </div>` : '';
+
+          const gallery = p.images && p.images.length ? `
+            <div class="detail-section">
+              <p class="section-label">Images</p>
+              <div class="detail-gallery">
+                ${p.images.map(src => `<img src="${src}" alt="" loading="lazy">`).join('')}
+              </div>
+            </div>` : '';
+
+          const skills = p.skills && p.skills.length ? `
+            <div class="detail-section">
+              <p class="section-label">Skills</p>
+              <div class="detail-skills">
+                ${p.skills.map(s => `<span class="detail-skill-chip">${s}</span>`).join('')}
+              </div>
+            </div>` : '';
+
+          detail.innerHTML = `
+            <p class="page-heading">// projects / ${p.title.toLowerCase()}</p>
+            ${hero}
+            <div class="detail-header">
+              <h1 class="detail-title">${p.title}</h1>
+              <div class="detail-meta">
+                <div class="card-tags">${tags}</div>
+                <div class="card-links">${links}</div>
+              </div>
+            </div>
+            ${summary}
+            ${whatIDid}
+            ${outcome}
+            ${gallery}
+            ${skills}
+            <div class="detail-back">
+              <a href="projects.html" class="card-link">← all projects</a>
+            </div>
+          `;
+        })
+        .catch(() => {
+          detail.innerHTML = '<p class="empty-state">// to preview locally, run: python3 -m http.server 8080</p>';
+        });
+    })();
+  </script>
+</body>
+
+</html>
