@@ -576,6 +576,7 @@ footer a:hover {
   color: var(--text);
   opacity: 0.88;
   line-height: 1.75;
+  white-space: pre-line;
 }
 
 .detail-bullets {

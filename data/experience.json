@@ -6,14 +6,8 @@
     "tags": [
       "internship"
     ],
-    "description": "Add your internship description here.",
-    "image": "",
-    "links": [
-      {
-        "label": "Company",
-        "url": "https://example.com"
-      }
-    ]
+    "description": "Physical AI for manufacturing.",
+    "image": ""
   },
   {
     "title": "Robotics Intern",
@@ -22,9 +16,8 @@
     "tags": [
       "internship"
     ],
-    "description": "Add your internship description here.",
-    "image": "",
-    "links": []
+    "description": "Developed automation calibration pipeline (Python) using 5-DOF robotic arm.",
+    "image": ""
   },
   {
     "title": "Mechatronics Engineering Researcher",
@@ -33,15 +26,11 @@
     "tags": [
       "research"
     ],
-    "description": "Add your research role description here.",
+    "description": "Developed a syringe pump system with hydraulic and pneumatic actuation for soft robotic applications.",
     "image": "",
     "links": [
       {
         "label": "Paper",
-        "url": "https://example.com"
-      },
-      {
-        "label": "Poster",
         "url": "https://example.com"
       }
     ]
@@ -53,8 +42,17 @@
     "tags": [
       "research"
     ],
-    "description": "Add your research role description here.",
+    "description": "Implemented and evaluated a vision-based approach for collaborative mapping between two robots (ROS2, Python).",
     "image": "",
-    "links": []
+    "links": [
+      {
+        "label": "Poster",
+        "url": "https://www.bu.edu/summer/files/2024/10/Liu_Samuel_POSTER.pdf"
+      },
+      {
+        "label": "Blog",
+        "url": "https://samuelrise2024.blogspot.com/"
+      }
+    ]
   }
 ]

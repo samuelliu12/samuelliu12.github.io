@@ -13,13 +13,15 @@
         "url": "https://github.com/tongclement/FBR-E-Throttle"
       }
     ],
-    "summary": "...",
+    "summary": "The electronic throttle (E-Throttle) project replaces the mechanical throttle cable with an electronically controlled throttle body, which will bring many benefits such as improved control of fuel/air ratio. \n\nThe E-Throttle system consists of two Accelerator Pedal Position Sensors (APPS) at the pedal, two Throttle Position Sensors (TPS) with a stepper motor at the throttle body, and a central control board. This controller processes sensor inputs and implements redundant, safety-critical control in compliance with the Formula Student regulations.",
     "what_i_did": [
       "...",
       "...",
       "..."
     ],
-    "future_steps": "...",
+    "future_steps": [
+      "..."
+    ],
     "images": [
       ""
     ],
@@ -54,7 +56,9 @@
       "...",
       "..."
     ],
-    "results": "...",
+    "results": [
+      "..."
+    ],
     "images": [
       ""
     ],
@@ -86,7 +90,9 @@
       "Developed OpenCV and YOLO pipeline for object detection and localization.",
       "Built Proportional Controller (Arduino, C++) with servo motor for pan-axis tracking."
     ],
-    "future_steps": "...",
+    "future_steps": [
+      "..."
+    ],
     "images": [
       ""
     ],
@@ -135,11 +141,46 @@
     "links": [
       {
         "label": "Video",
-        "url": "https://youtu.be/lpSr80wKzYY?si=Z1nHc7KB6q8cffBq"
+        "url": "https://www.youtube.com/watch?v=lpSr80wKzYY"
       }
+    ],
+    "summary": "...",
+    "what_i_did": [
+      "Used Solidworks to design a roller coaster assembly, including cart and track.",
+      "Ran physics simulations in Solidworks to analyze the motion of the cart along the track."
+    ],
+    "results": [
+      "..."
     ],
     "skills": [
       "Solidworks"
+    ]
+  },
+  {
+    "title": "LED Magnetometer",
+    "tags": [
+      "hardware"
+    ],
+    "description": "",
+    "image": "assets/images/magnetometer.jpg",
+    "links": [
+      {
+        "label": "Video",
+        "url": "https://www.youtube.com/watch?v=koqMYdsBsrs"
+      }
+    ],
+    "summary": "...",
+    "what_i_did": [
+      "Designed and built cascaded op-amp circuit to amplify and remove offset from magnetometer signal.",
+      "Designed and built multi-threshold comparator circuit to drive the 4-level LED display"
+    ],
+    "results": [
+      "..."
+    ],
+    "skills": [
+      "Breadboard Prototyping",
+      "Analog Circuit Design",
+      "Oscilloscope"
     ]
   }
 ]
