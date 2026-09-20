@@ -14,7 +14,6 @@ Valid tag values: `"hardware"`, `"firmware"`, `"software"`.
 - `js/main.js` — active-nav detection + card renderer + filter logic
 - `data/projects.json` — single source of truth for project cards
 - `assets/images/` — project photos and headshot
-- `assets/resume.pdf` — embedded on `resume.html`; replace the file to update the resume
 
 ## Design tokens
 Light, minimal academic style (white background, blue links, thin dividers, no cards).

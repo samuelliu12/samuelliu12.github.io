@@ -451,29 +451,6 @@ footer a:hover {
   cursor: default;
 }
 
-/* === RESUME === */
-.resume-header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.resume-download {
-  font-size: 0.92rem;
-  white-space: nowrap;
-}
-
-.resume-embed {
-  display: block;
-  width: 100%;
-  height: 80vh;
-  min-height: 600px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-}
-
 /* === EMPTY STATE === */
 .empty-state {
   font-size: 0.95rem;
