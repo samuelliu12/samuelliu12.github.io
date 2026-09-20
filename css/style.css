@@ -579,6 +579,19 @@ footer a:hover {
 @media (max-width: 640px) {
   .nav-inner {
     padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .nav-brand {
+    white-space: nowrap;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
   }
 
   main {
@@ -618,5 +631,19 @@ footer a:hover {
 
   .detail-gallery {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav-brand {
+    font-size: 0.95rem;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 0.82rem;
   }
 }
