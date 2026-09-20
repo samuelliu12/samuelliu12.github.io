@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects — Samuel Liu</title>
-  <meta name="description" content="Robotics, mechatronics, and firmware projects by Samuel Liu.">
+  <title>Resume — Samuel Liu</title>
+  <meta name="description" content="Resume of Samuel Liu, engineering student at the University of Cambridge.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
   <nav>
@@ -27,18 +25,18 @@
   </nav>
 
   <main>
-    <h1 class="page-heading">Projects</h1>
-
-    <div class="filter-tabs">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="hardware">Hardware</button>
-      <button class="filter-btn" data-filter="firmware">Firmware</button>
-      <button class="filter-btn" data-filter="software">Software</button>
+    <div class="resume-header">
+      <h1 class="page-heading">Resume</h1>
+      <a href="assets/resume.pdf" class="resume-download" download>Download PDF ↓</a>
     </div>
 
-    <div class="card-grid" id="card-grid">
-      <!-- Cards injected by js/main.js from data/projects.json -->
-    </div>
+    <!-- Drop your resume at assets/resume.pdf and it will appear here. -->
+    <object data="assets/resume.pdf" type="application/pdf" class="resume-embed">
+      <p class="empty-state">
+        Resume not available yet. Add <code>assets/resume.pdf</code> to publish it, or
+        <a href="assets/resume.pdf">open the PDF directly</a>.
+      </p>
+    </object>
   </main>
 
   <footer>
@@ -51,5 +49,4 @@
 
   <script src="js/main.js"></script>
 </body>
-
 </html>

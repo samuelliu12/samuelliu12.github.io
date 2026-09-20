@@ -1,13 +1,23 @@
 [
   {
     "title": "Robotics Software Intern",
-    "company": "Industrial Next",
+    "company": "Industrial Next (YC W22)",
     "dates": "Jun 2026 — Sep 2026",
     "tags": [
       "internship"
     ],
-    "description": "Physical AI for manufacturing.",
-    "image": ""
+    "description": "Dexterous hands and Real2Sim2Real",
+    "highlights": [],
+    "links": [
+      {
+        "label": "Paper",
+        "url": ""
+      },
+      {
+        "label": "Project Page",
+        "url": ""
+      }
+    ]
   },
   {
     "title": "Robotics Intern",
@@ -16,8 +26,8 @@
     "tags": [
       "internship"
     ],
-    "description": "Developed automation calibration pipeline (Python) using 5-DOF robotic arm.",
-    "image": ""
+    "description": "Developed automated drone sensor calibration pipeline using 5-DOF robotic arm.",
+    "highlights": []
   },
   {
     "title": "Mechatronics Engineering Researcher",
@@ -27,12 +37,10 @@
       "research"
     ],
     "description": "Developed a syringe pump system with hydraulic and pneumatic actuation for soft robotic applications.",
-    "image": "",
-    "links": [
-      {
-        "label": "Paper",
-        "url": "https://example.com"
-      }
+    "highlights": [
+      "Built the low-level control stack on an ESP32 in C++ (Arduino IDE).",
+      "Designed, calibrated, and tested a pressure sensor circuit with amplifier and filter stages for reliable closed-loop feedback.",
+      "Programmed a PID pressure controller: roughly ±1 kPa precision (~1.0% span error) pneumatic and ±2 kPa (~0.75% span error) hydraulic."
     ]
   },
   {
@@ -43,7 +51,12 @@
       "research"
     ],
     "description": "Implemented and evaluated a vision-based approach for collaborative mapping between two robots (ROS2, Python).",
-    "image": "",
+    "highlights": [
+      "Built two ROSBots and implemented follow-the-leader coordination using AprilTag detection and a PD controller for relative localization.",
+      "Chained frame transforms between adjacent AprilTags to merge both robots' maps into one.",
+      "Collaborative mapping beat individual mapping in accuracy: 2.05 m vs 2.69 m RMSE.",
+      "Presented results as a poster at the BU RISE symposium."
+    ],
     "links": [
       {
         "label": "Poster",

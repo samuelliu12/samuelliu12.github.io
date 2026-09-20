@@ -18,13 +18,20 @@ if (expGrid) {
   function expCardHTML(e) {
     const media = e.image
       ? `<img src="${e.image}" alt="${e.title}" class="card-img" loading="lazy">`
-      : `<div class="card-img-placeholder">[ no image ]</div>`;
+      : '';
 
     const tags = e.tags.map(t => `<span class="tag tag-${t}">${t}</span>`).join('');
 
     const links = (e.links || [])
-      .map(l => `<a href="${l.url}" class="card-link" target="_blank" rel="noopener">${l.label} ↗</a>`)
+      .map(l => l.url
+        ? `<a href="${l.url}" class="card-link" target="_blank" rel="noopener">${l.label} ↗</a>`
+        : `<span class="card-link card-link-pending">${l.label} · coming soon</span>`)
       .join('');
+
+    const highlights = (e.highlights || []).filter(Boolean);
+    const bullets = highlights.length
+      ? `<ul class="card-bullets">${highlights.map(h => `<li>${h}</li>`).join('')}</ul>`
+      : '';
 
     return `
       <article class="card" data-tags="${e.tags.join(',')}">
@@ -35,6 +42,7 @@ if (expGrid) {
           <p class="card-meta">${e.company}</p>
           <p class="card-dates">${e.dates}</p>
           <p class="card-desc">${e.description}</p>
+          ${bullets}
           <div class="card-links">${links}</div>
         </div>
       </article>`;
@@ -47,7 +55,7 @@ if (expGrid) {
       : allExperience.filter(e => e.tags.includes(filter));
 
     if (visible.length === 0) {
-      expGrid.innerHTML = `<p class="empty-state">// no experience tagged "${filter}"</p>`;
+      expGrid.innerHTML = `<p class="empty-state">No experience tagged "${filter}".</p>`;
     } else {
       expGrid.innerHTML = visible.map(expCardHTML).join('');
     }
@@ -61,7 +69,7 @@ if (expGrid) {
     });
   });
 
-  fetch('data/experience.json')
+  fetch('data/experience.json?v=' + Date.now())
     .then(r => {
       if (!r.ok) throw new Error(r.status);
       return r.json();
@@ -71,7 +79,7 @@ if (expGrid) {
       renderExp('all');
     })
     .catch(() => {
-      expGrid.innerHTML = `<p class="empty-state">// to preview locally, run: python3 -m http.server 8000</p>`;
+      expGrid.innerHTML = `<p class="empty-state">To preview locally, run: python3 -m http.server 8080</p>`;
     });
 }
 function slugify(title) {
@@ -87,14 +95,17 @@ if (grid) {
   }
 
   function cardHTML(p) {
+    const pos = p.image_position ? ` style="object-position: ${p.image_position}"` : '';
     const media = p.image
-      ? `<img src="${p.image}" alt="${p.title}" class="card-img" loading="lazy">`
-      : `<div class="card-img-placeholder">[ no image ]</div>`;
+      ? `<img src="${p.image}" alt="${p.title}" class="card-img" loading="lazy"${pos}>`
+      : `<div class="card-img-placeholder">No image</div>`;
 
     const tags = p.tags.map(tagHTML).join('');
 
     const links = (p.links || [])
-      .map(l => `<a href="${l.url}" class="card-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">${l.label} ↗</a>`)
+      .map(l => l.url
+        ? `<a href="${l.url}" class="card-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">${l.label} ↗</a>`
+        : `<span class="card-link card-link-pending">${l.label} · coming soon</span>`)
       .join('');
 
     const slug = slugify(p.title);
@@ -120,7 +131,7 @@ if (grid) {
       : allProjects.filter(p => p.tags.includes(filter));
 
     if (visible.length === 0) {
-      grid.innerHTML = `<p class="empty-state">// no projects tagged "${filter}"</p>`;
+      grid.innerHTML = `<p class="empty-state">No projects tagged "${filter}".</p>`;
     } else {
       grid.innerHTML = visible.map(cardHTML).join('');
     }
@@ -136,7 +147,7 @@ if (grid) {
   });
 
   // Load projects
-  fetch('data/projects.json')
+  fetch('data/projects.json?v=' + Date.now())
     .then(r => {
       if (!r.ok) throw new Error(r.status);
       return r.json();
@@ -146,6 +157,6 @@ if (grid) {
       render('all');
     })
     .catch(() => {
-      grid.innerHTML = `<p class="empty-state">// to preview locally, run: python3 -m http.server 8000</p>`;
+      grid.innerHTML = `<p class="empty-state">To preview locally, run: python3 -m http.server 8080</p>`;
     });
 }

@@ -1,37 +1,5 @@
 [
   {
-    "title": "E-Throttle",
-    "tags": [
-      "hardware",
-      "firmware"
-    ],
-    "description": "Electronic Throttle Controller for Full Blue Racing (Cambridge University's Formula Student Team).",
-    "image": "assets/images/e-throttle_board.jpg",
-    "links": [
-      {
-        "label": "GitHub",
-        "url": "https://github.com/tongclement/FBR-E-Throttle"
-      }
-    ],
-    "summary": "The electronic throttle (E-Throttle) project replaces the mechanical throttle cable with an electronically controlled throttle body, which will bring many benefits such as improved control of fuel/air ratio. \n\nThe E-Throttle system consists of two Accelerator Pedal Position Sensors (APPS) at the pedal, two Throttle Position Sensors (TPS) with a stepper motor at the throttle body, and a central control board. This controller processes sensor inputs and implements redundant, safety-critical control in compliance with the Formula Student regulations.",
-    "what_i_did": [
-      "...",
-      "...",
-      "..."
-    ],
-    "future_steps": [
-      "..."
-    ],
-    "images": [
-      ""
-    ],
-    "skills": [
-      "KiCad",
-      "ESP32",
-      "Arduino C++"
-    ]
-  },
-  {
     "title": "Lunar Rock Collection Robot",
     "tags": [
       "hardware",
@@ -50,56 +18,101 @@
         "url": "https://github.com/pkumar1025/robohacks_prototype"
       }
     ],
-    "summary": "...",
+    "summary": "Luna is a rock-collection rover built in a weekend at YC RoboHacks (~10% acceptance) on top of Innate's MARS robot. The robot drives over a simulated lunar surface, spots rocks with a vision-language model and object detection pipeline, picks them up with a modified gripper, and drops them into onboard sorting bins. The picking motion itself is a learned policy rather than a scripted trajectory, trained from teleoperation demonstrations and exposed as a skill the robot's VLM agent can call.",
     "what_i_did": [
-      "...",
-      "...",
-      "..."
+      "Prototyped the hardware additions: grippers sized for the rock samples, sorting bins mounted on the chassis, and a force-sensitive resistor (FSR) embedded in the gripper.",
+      "Collected ~50 teleoperation demonstrations of rock picking and trained an ACT (Action Chunking Transformer) policy on them.",
+      "Deployed the trained policy as a skill for the robot's VLM agent, so the high-level planner decides what to pick and the learned policy handles how."
     ],
     "results": [
-      "..."
+      "Demo: the rover finds, picks, and sorts rocks autonomously on the sandbox surface."
     ],
-    "images": [
-      ""
-    ],
+    "images": [],
     "skills": [
       "Onshape",
-      "Teleoperation"
+      "Rapid Prototyping",
+      "Teleoperation",
+      "ACT / Imitation Learning",
+      "Python",
+      "VLM Agents"
     ]
   },
   {
     "title": "Pan-Tilt-Zoom Tracking Camera",
     "tags": [
+      "hardware",
       "firmware",
       "software"
     ],
     "description": "PTZ camera with realtime object detection and tracking.",
-    "image": "",
+    "image": "assets/images/ptz.jpg",
     "links": [
       {
         "label": "Video",
-        "url": "https://youtu.be/bwd5IqOa-WM"
+        "url": "https://youtu.be/Xo-vUbaKPRw"
       },
       {
         "label": "GitHub",
-        "url": "https://github.com/samuelliu1202/ptz_tracking_camera"
+        "url": "https://github.com/samuelliu12/ptz_tracking_camera"
       }
     ],
-    "summary": "...",
+    "summary": "A camera that finds an object with YOLO and physically turns to keep it centered. A webcam sits on 3D printed mounts driven by a stepper motor for pan and a servo for tilt, both controlled by an Arduino, with a laptop running detection and control.",
     "what_i_did": [
-      "Developed OpenCV and YOLO pipeline for object detection and localization.",
-      "Built Proportional Controller (Arduino, C++) with servo motor for pan-axis tracking."
+      "Built the vision pipeline in Python with OpenCV and YOLO, smoothing the detected target position to avoid jitter.",
+      "Designed the control logic: velocity control for the pan stepper and eased position control for the tilt servo, so motion stays smooth despite a discrete command stream.",
+      "Added firmware safety interlocks: a watchdog that stops motion if commands drop out, plus hard limits on both axes.",
+      "Implemented automatic digital zoom that keeps the subject at a constant apparent size, with a deadband so the crop doesn't breathe on a still target.",
+      "Designed and 3D printed the mounts in Onshape, built the motor and Arduino circuit, and calibrated the axes before closing the loop."
     ],
     "future_steps": [
-      "..."
+      "Depth-based zoom using a monocular depth model, so framing follows actual distance rather than bounding box size.",
+      "A self-contained build on a PCB with enclosed wiring and aligned mounts.",
+      "Natural language control for picking the subject and composing the shot."
     ],
-    "images": [
-      ""
-    ],
+    "images": [],
     "skills": [
       "Python",
+      "OpenCV",
+      "YOLO11",
       "Arduino C++",
-      "OpenCV"
+      "Onshape",
+      "3D Printing"
+    ],
+    "image_position": "left center"
+  },
+  {
+    "title": "E-Throttle",
+    "tags": [
+      "hardware",
+      "firmware"
+    ],
+    "description": "Electronic Throttle Controller for Full Blue Racing (University of Cambridge's Formula Student Team).",
+    "image": "assets/images/e-throttle_board.jpg",
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/tongclement/FBR-E-Throttle"
+      }
+    ],
+    "summary": "The electronic throttle (E-Throttle) project replaces the mechanical throttle cable with an electronically controlled throttle body, which brings benefits such as improved control of the fuel/air ratio. The goal is to redesign and validate the Electronic Throttle Control for proper operation and compliance with Formula Student safety regulations.\n\nThe E-Throttle system consists of two Accelerator Pedal Position Sensors (APPS) at the pedal, two Throttle Position Sensors (TPS) with a stepper motor at the throttle body, and a central control board. This controller processes sensor inputs and implements redundant, safety-critical control in compliance with the Formula Student regulations.",
+    "what_i_did": [
+      "Breadboard prototyped open-loop control of the stepper motor from the APPS sensors before committing to a board design.",
+      "Designed the control PCB in KiCad with hardware-level safety built in: independent watchdog timers, high-side FETs, and relays, so a firmware hang or sensor fault cuts power to the throttle actuator without relying on the microcontroller.",
+      "Assembled the board and tested each subsystem individually (power, sensor inputs, watchdog, FET and relay switching, stepper driver). All components functional.",
+      "Developing the throttle controller firmware on the ESP32 to drive the stepper motor from APPS input with closed-loop feedback from the TPS sensors."
+    ],
+    "future_steps": [
+      "Closed-loop PID control of throttle position using TPS feedback.",
+      "Software safety features required by the regulations: plausibility checks between the redundant APPS and TPS sensors, and safe shutdown on implausible readings.",
+      "Integrate with the car and validate the full system against the Formula Student safety rules."
+    ],
+    "images": [],
+    "skills": [
+      "KiCad",
+      "PCB Design",
+      "ESP32",
+      "Arduino C++",
+      "Stepper Motor Control"
     ]
   },
   {
@@ -107,13 +120,36 @@
     "tags": [
       "software"
     ],
-    "description": "Simulate autonomous navigation and manipulation of a mobile robot.",
-    "image": "",
+    "description": "ROS2 robot that maps an environment, navigates it autonomously, and detects what is in it — simulated in Gazebo.",
+    "image": "assets/images/mobile_manipulator.png",
     "links": [
       {
         "label": "GitHub",
-        "url": "https://github.com/samuelliu1202/mobile-manipulator.git"
+        "url": "https://github.com/samuelliu12/mobile-manipulator.git"
       }
+    ],
+    "summary": "A simulated robot that maps an unknown space, navigates it autonomously, and is being extended to recognise what is in it. A TurtleBot3 runs in Gazebo on ROS2, mapping with slam_toolbox, navigating with Nav2, and carrying a custom depth camera that feeds a YOLO detector node.",
+    "what_i_did": [
+      "Built the simulation bringup as a self-contained ROS2 package so one launch argument selects the robot model, URDF, and topic bridge together; tuned sensor rates to run near real time.",
+      "Brought up SLAM with slam_toolbox and mapped both a stock world and a custom house world using a waypoint tour node driven by the SLAM-corrected pose.",
+      "Implemented autonomous navigation with Nav2 and AMCL against a saved map, verified with a scripted goal test instead of clicking in RViz.",
+      "Extended the stock robot into an RGBD model and cross-checked the depth against LiDAR so detections can later be projected into 3D.",
+      "Wrote a YOLO detector node that publishes standard vision_msgs detections, dropping frames rather than queueing them to keep latency bounded."
+    ],
+    "future_steps": [
+      "Fuse depth with LiDAR to lift 2D detections into 3D on the map, so objects are remembered by location.",
+      "Filter dynamic objects like people out of the static map while still avoiding them locally.",
+      "Frontier exploration with Nav2 so the robot maps rooms beyond the one it starts in.",
+      "Add the WidowX 250 arm and drive pick-and-place with MoveIt2 from the semantic map.",
+      "LLM task planner that turns a natural language instruction into navigation goals and grasps."
+    ],
+    "skills": [
+      "ROS2",
+      "Gazebo",
+      "SLAM",
+      "Nav2",
+      "Python",
+      "YOLO11"
     ]
   },
   {
@@ -123,12 +159,33 @@
       "firmware"
     ],
     "description": "Quadcopter drone with downward-facing infrared camera for birds-eye thermal imaging.",
-    "image": "",
+    "image": "assets/images/drone.jpg",
     "links": [
       {
         "label": "Video",
         "url": "https://youtu.be/34Y6oeJE_qU"
       }
+    ],
+    "summary": "A self-built quadcopter carrying a downward-facing FLIR Lepton thermal camera, intended for birds-eye thermal imaging of the ground below. The airframe is built around a Pixhawk 2.4.8 flight controller with GPS, four ESC-driven motors, a power distribution board, and an RC receiver, and can fly either under manual radio control or autonomously along a Mission Planner route. A Raspberry Pi 4B mounted on the frame runs the thermal camera.",
+    "what_i_did": [
+      "Assembled the quadcopter frame and soldered the electronics: Pixhawk flight controller, GPS, four ESCs and motors, power distribution board, LiPo battery, buzzer, safety switch, and RC receiver.",
+      "Calibrated the Pixhawk (accelerometer, compass, radio, ESCs) and set up autonomous missions in Mission Planner.",
+      "Designed a camera holder in Onshape to mount the FLIR Lepton and Raspberry Pi under the frame, facing downward.",
+      "Set up the thermal imaging pipeline on the Raspberry Pi using LeptonModule to drive the FLIR Lepton, with a Qt GUI for viewing and capturing images."
+    ],
+    "results": [
+      "Drone flies manually with the remote control or autonomously along a Mission Planner waypoint route.",
+      "Thermal camera captures clear infrared images (e.g. grass vs. brick boundary), but capture is still triggered manually rather than automatically in flight."
+    ],
+    "images": [],
+    "skills": [
+      "Pixhawk / ArduPilot",
+      "Mission Planner",
+      "Soldering",
+      "Onshape",
+      "Raspberry Pi",
+      "FLIR Lepton",
+      "Qt"
     ]
   },
   {
@@ -137,23 +194,26 @@
       "software"
     ],
     "description": "CAD design a roller coaster and simulate its movement along a track.",
-    "image": "",
+    "image": "assets/images/roller_coaster.png",
     "links": [
       {
         "label": "Video",
         "url": "https://www.youtube.com/watch?v=lpSr80wKzYY"
       }
     ],
-    "summary": "...",
+    "summary": "A roller coaster designed and simulated entirely in SolidWorks. The cart and track were modelled as separate parts and combined into an assembly, then run through SolidWorks physics-based motion simulation to check that the ride stays within safe speed and acceleration limits along the whole track.",
     "what_i_did": [
-      "Used Solidworks to design a roller coaster assembly, including cart and track.",
-      "Ran physics simulations in Solidworks to analyze the motion of the cart along the track."
+      "Used SolidWorks to design a roller coaster assembly, including cart and track.",
+      "Ran physics simulations in SolidWorks to analyze the motion of the cart along the track, extracting speed and lateral/vertical acceleration profiles."
     ],
     "results": [
-      "..."
+      "Top speed of roughly 30 mph along the track.",
+      "Maximum lateral acceleration of about 0.4 g and maximum vertical acceleration of about 1.7 g, within typical rider-safety limits."
     ],
+    "images": [],
     "skills": [
-      "Solidworks"
+      "SolidWorks",
+      "Motion Simulation"
     ]
   },
   {
@@ -161,7 +221,7 @@
     "tags": [
       "hardware"
     ],
-    "description": "",
+    "description": "Analog signal-conditioning circuit that displays magnetic field strength on a 4-level LED bar.",
     "image": "assets/images/magnetometer.jpg",
     "links": [
       {
@@ -169,17 +229,21 @@
         "url": "https://www.youtube.com/watch?v=koqMYdsBsrs"
       }
     ],
-    "summary": "...",
+    "summary": "A fully analog magnetometer readout. The raw sensor output is small and sits on a DC offset, so it is first passed through a cascaded op-amp stage that removes the offset and amplifies the signal into a usable range. The conditioned signal then drives a bank of comparators with staggered thresholds, lighting one to four LEDs as the field strength increases. No microcontroller is involved.",
     "what_i_did": [
-      "Designed and built cascaded op-amp circuit to amplify and remove offset from magnetometer signal.",
-      "Designed and built multi-threshold comparator circuit to drive the 4-level LED display"
+      "Designed and built a cascaded op-amp circuit to amplify and remove the offset from the magnetometer signal.",
+      "Designed and built a multi-threshold comparator circuit to drive the 4-level LED display.",
+      "Prototyped on breadboard and verified each stage with an oscilloscope."
     ],
     "results": [
-      "..."
+      "LED bar responds proportionally to field strength as a magnet is brought closer (see video)."
     ],
+    "images": [],
     "skills": [
       "Breadboard Prototyping",
       "Analog Circuit Design",
+      "Op-Amps",
+      "Comparators",
       "Oscilloscope"
     ]
   }

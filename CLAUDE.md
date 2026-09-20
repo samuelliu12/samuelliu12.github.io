@@ -2,11 +2,11 @@
 
 ## Stack
 Vanilla HTML + CSS + JS. No build step, no dependencies, no package.json.
-Deploy by pushing to `main` on `samuelliu1202.github.io`; GitHub Pages serves the root directly.
+Deploy by pushing to `main` on `samuelliu12.github.io`; GitHub Pages serves the root directly.
 
 ## Adding / editing projects
 Edit `data/projects.json` only — never touch the card HTML in `projects.html`.
-Each entry supports: `title`, `tags` (array), `description`, `image` (path or `""`), `github`, `demo`, `paper`.
+Each entry supports: `title`, `tags` (array), `description`, `image` (path or `""`), `image_position` (optional CSS `object-position`, e.g. `"left center"`, to control the crop), `links` (array of `{label, url}`; an empty `url` renders as a non-clickable "coming soon" label).
 Valid tag values: `"hardware"`, `"firmware"`, `"software"`.
 
 ## File roles
@@ -14,19 +14,21 @@ Valid tag values: `"hardware"`, `"firmware"`, `"software"`.
 - `js/main.js` — active-nav detection + card renderer + filter logic
 - `data/projects.json` — single source of truth for project cards
 - `assets/images/` — project photos and headshot
+- `assets/resume.pdf` — embedded on `resume.html`; replace the file to update the resume
 
 ## Design tokens
+Light, minimal academic style (white background, blue links, thin dividers, no cards).
+
 | Token | Value |
 |---|---|
-| Background | `#0d0d0d` |
-| Surface (cards) | `#161616` |
-| Border | `#262626` |
-| Text | `#e2e2e2` |
-| Muted | `#737373` |
-| Accent | `#4ade80` (green) |
-| Heading font | Space Mono (Google Fonts) |
-| Body font | Inter (Google Fonts) |
-| Max content width | 900px |
+| Background | `#ffffff` |
+| Surface (tags, placeholders) | `#f7f7f7` |
+| Border | `#e5e5e5` |
+| Text | `#1f1f1f` |
+| Muted | `#6b6b6b` |
+| Accent (links) | `#1a5fb4` (blue) |
+| Font | Lato (Google Fonts), all text |
+| Max content width | 780px |
 
 ## Local preview
 ```
