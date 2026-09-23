@@ -6,7 +6,7 @@ Deploy by pushing to `main` on `samuelliu12.github.io`; GitHub Pages serves the 
 
 ## Adding / editing projects
 Edit `data/projects.json` only — never touch the card HTML in `projects.html`.
-Each entry supports: `title`, `tags` (array), `description`, `image` (path or `""`), `image_position` (optional CSS `object-position`, e.g. `"left center"`, to control the crop), `links` (array of `{label, url}`; an empty `url` renders as a non-clickable "coming soon" label).
+Each entry supports: `title`, `tags` (array), `description`, `image` (path or `""`), `image_position` (optional CSS `object-position`, e.g. `"left center"`, to control the crop), `detail_image` (optional; replaces `image` on the project detail page, and `image_position` is not applied to it), `links` (array of `{label, url}`; an empty `url` renders as a non-clickable "coming soon" label).
 Valid tag values: `"hardware"`, `"firmware"`, `"software"`.
 
 ## File roles

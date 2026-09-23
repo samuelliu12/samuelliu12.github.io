@@ -81,9 +81,10 @@
               </ul>
             </div>` : '';
 
-          const pos = p.image_position ? ` style="object-position: ${p.image_position}"` : '';
-          const hero = p.image
-            ? `<img src="${p.image}" alt="${p.title}" class="detail-hero"${pos}>`
+          const heroSrc = p.detail_image || p.image;
+          const pos = p.image_position && !p.detail_image ? ` style="object-position: ${p.image_position}"` : '';
+          const hero = heroSrc
+            ? `<img src="${heroSrc}" alt="${p.title}" class="detail-hero"${pos}>`
             : '';
 
           const summary = p.summary ? `

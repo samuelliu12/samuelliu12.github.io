@@ -6,6 +6,8 @@
     ],
     "description": "Sandbox for learning robot learning: a simulated car learns to drive to a goal through behavior cloning, DAgger, PPO, and residual RL.",
     "image": "assets/images/robot_learning.png",
+    "image_position": "center top",
+    "detail_image": "assets/images/robot_learning_residual.png",
     "links": [
       {
         "label": "GitHub",
@@ -191,6 +193,7 @@
     ],
     "description": "Quadcopter drone with downward-facing infrared camera for birds-eye thermal imaging.",
     "image": "assets/images/drone.jpg",
+    "detail_image": "assets/images/drone_landing_pad.png",
     "links": [
       {
         "label": "Video",
