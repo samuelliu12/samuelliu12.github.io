@@ -2,11 +2,11 @@
   {
     "title": "InSight",
     "tags": [
-      "software"
+      "software", "hardware", "firmware"
     ],
     "description": "Cal Hacks 13.0",
-    "image": "",
-    "image_position": "",
+    "image": "assets/images/insight.jpg",
+    "image_position": "center 17%",
     "detail_image": "",
     "links": [
       {
@@ -104,6 +104,7 @@
     ],
     "description": "PTZ camera with realtime object detection and tracking.",
     "image": "assets/images/ptz.jpg",
+    "image_position": "80% center",
     "links": [
       {
         "label": "Video",
