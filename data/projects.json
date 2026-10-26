@@ -1,5 +1,30 @@
 [
   {
+    "title": "InSight",
+    "tags": [
+      "software"
+    ],
+    "description": "Cal Hacks 13.0",
+    "image": "",
+    "image_position": "",
+    "detail_image": "",
+    "links": [
+      {
+        "label": "Devpost",
+        "url": "https://devpost.com/software/insight-vcuo9i"
+      },
+      {
+        "label": "Video",
+        "url": "https://youtu.be/VTOk2mAgLuI?si=6LyVGNyYb-5TY6Qa"
+      }
+    ],
+    "summary": "InSight is a robot arm with a 3D pen that can turn any picture into 3D relief that blind people can feel, from family photos to pill bottles to Halloween decorations.",
+    "what_i_did": [
+      "More coming soon."
+    ],
+    "skills": []
+  },
+  {
     "title": "Learning Robot Learning",
     "tags": [
       "software"
@@ -33,7 +58,7 @@
     ]
   },
   {
-    "title": "Lunar Rock Collection Robot",
+    "title": "Luna: Lunar Rock Collection Robot",
     "tags": [
       "hardware",
       "firmware",
