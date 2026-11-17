@@ -4,7 +4,7 @@
     "tags": [
       "software", "hardware", "firmware"
     ],
-    "description": "Cal Hacks 13.0",
+    "description": "Cal Hacks 13.0 Project: a robot arm with a 3D pen that turns any image into raised tactile relief for blind and low-vision people.",
     "image": "assets/images/insight.jpg",
     "image_position": "center 17%",
     "detail_image": "",
@@ -18,11 +18,28 @@
         "url": "https://youtu.be/VTOk2mAgLuI?si=6LyVGNyYb-5TY6Qa"
       }
     ],
-    "summary": "InSight is a robot arm with a 3D pen that can turn any picture into 3D relief that blind people can feel, from family photos to pill bottles to Halloween decorations.",
+    "summary": "InSight turns any image into a raised tactile relief that blind and low-vision people can read with their fingertips, drawn directly onto the object it belongs on. Given an image and a target surface (plane, cylinder, or sphere), it extracts the major edges as tactile ridges and uses a 7-DOF Flexiv Rizon 4s holding a 3D pen to draw them onto the surface. Unlike a 3D printer, which can only build upward on a flat bed, the arm can hold the pen at almost any orientation, so it can draw on curved objects like pill bottles and Halloween decorations. The pipeline runs in six stages across 8 ROS2 packages, with no deep learning: every stage is classical vision, geometry, or control.",
     "what_i_did": [
-      "More coming soon."
+      "Extracted the major image edges with OpenCV and mapped them onto each surface, wrapping the image around cylinders and using stereographic projection for spheres.",
+      "Generated Cartesian toolpaths with clearance checks, keeping the pen within 35° of the surface normal, smoothing velocity at kinks, and avoiding the surface between strokes.",
+      "Wrote a C++ executor that switches between a joint controller for approach and park and a Cartesian controller for drawing.",
+      "Fixed uneven beads on curved surfaces by tracing them to the Cartesian controller not interpolating between targets, then streaming TCP targets at 1 kHz to match the control loop.",
+      "Wrote ESP32 firmware that drives a servo to press the pen's extrude button from the robot's digital output, with debouncing, a safe boot state, and a 2 s press timeout.",
+      "Designed a pen holder for the arm and fixtures to hold each object (tile, sphere, pill bottle) in Onshape."
     ],
-    "skills": []
+    "results": [
+      "Drew on flat tiles, cylinders, and spheres with one pipeline: a Cal Hacks venue map, a Jack-O-Lantern sphere, sun and moon labels on a Tylenol bottle, and a raised outline on a family photo."
+    ],
+    "skills": [
+      "ROS2",
+      "Python",
+      "C++",
+      "OpenCV",
+      "ESP32",
+      "Motion Planning",
+      "Cartesian Control",
+      "Onshape"
+    ]
   },
   {
     "title": "Learning Robot Learning",
@@ -249,34 +266,6 @@
     ]
   },
   {
-    "title": "Roller Coaster Modeling and Simulation",
-    "tags": [
-      "software"
-    ],
-    "description": "CAD design a roller coaster and simulate its movement along a track.",
-    "image": "assets/images/roller_coaster.png",
-    "links": [
-      {
-        "label": "Video",
-        "url": "https://www.youtube.com/watch?v=lpSr80wKzYY"
-      }
-    ],
-    "summary": "A roller coaster designed and simulated entirely in SolidWorks. The cart and track were modelled as separate parts and combined into an assembly, then run through SolidWorks physics-based motion simulation to check that the ride stays within safe speed and acceleration limits along the whole track.",
-    "what_i_did": [
-      "Used SolidWorks to design a roller coaster assembly, including cart and track.",
-      "Ran physics simulations in SolidWorks to analyze the motion of the cart along the track, extracting speed and lateral/vertical acceleration profiles."
-    ],
-    "results": [
-      "Top speed of roughly 30 mph along the track.",
-      "Maximum lateral acceleration of about 0.4 g and maximum vertical acceleration of about 1.7 g, within typical rider-safety limits."
-    ],
-    "images": [],
-    "skills": [
-      "SolidWorks",
-      "Motion Simulation"
-    ]
-  },
-  {
     "title": "LED Magnetometer",
     "tags": [
       "hardware"
@@ -305,6 +294,34 @@
       "Op-Amps",
       "Comparators",
       "Oscilloscope"
+    ]
+  },
+  {
+    "title": "Roller Coaster Modeling and Simulation",
+    "tags": [
+      "software"
+    ],
+    "description": "CAD design a roller coaster and simulate its movement along a track.",
+    "image": "assets/images/roller_coaster.png",
+    "links": [
+      {
+        "label": "Video",
+        "url": "https://www.youtube.com/watch?v=lpSr80wKzYY"
+      }
+    ],
+    "summary": "A roller coaster designed and simulated entirely in SolidWorks. The cart and track were modelled as separate parts and combined into an assembly, then run through SolidWorks physics-based motion simulation to check that the ride stays within safe speed and acceleration limits along the whole track.",
+    "what_i_did": [
+      "Used SolidWorks to design a roller coaster assembly, including cart and track.",
+      "Ran physics simulations in SolidWorks to analyze the motion of the cart along the track, extracting speed and lateral/vertical acceleration profiles."
+    ],
+    "results": [
+      "Top speed of roughly 30 mph along the track.",
+      "Maximum lateral acceleration of about 0.4 g and maximum vertical acceleration of about 1.7 g, within typical rider-safety limits."
+    ],
+    "images": [],
+    "skills": [
+      "SolidWorks",
+      "Motion Simulation"
     ]
   }
 ]

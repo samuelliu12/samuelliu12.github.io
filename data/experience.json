@@ -6,8 +6,13 @@
     "tags": [
       "internship"
     ],
-    "description": "Dexterous hands and Real2Sim2Real",
-    "highlights": [],
+    "description": "Developed a Real2Sim2Real pipeline with world and behavior grounding for sim-and-real co-training.",
+    "highlights": [
+      "Integrated Manus glove and Vive tracker teleoperation for three dexterous hands (Psyonic, OmniHand, Wuji) into the company ROS2 stack.",
+      "Collected teleop data and post-trained foundation models (GR00T 1.7, π0.5) on dexterous tasks.",
+      "Ran a 2×2 world and behavior grounding experiment (MimicGen, Isaac Sim); fully grounded co-training beat real-only training on a dynamic pick-and-sort task, 86% vs 52% success.",
+      "First-authored a paper on Real2Sim2Real grounding, accepted to 4 CoRL workshops."
+    ],
     "links": [
       {
         "label": "Paper",

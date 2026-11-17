@@ -190,6 +190,45 @@ footer a:hover {
   margin: 40px 0;
 }
 
+/* === HOME — SELECTED WORK === */
+.works-section {
+  margin-bottom: 44px;
+}
+
+.work-entry {
+  max-width: 680px;
+  margin-bottom: 24px;
+}
+
+.work-entry:last-child {
+  margin-bottom: 0;
+}
+
+.work-title {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.45;
+  margin-bottom: 4px;
+}
+
+.work-authors {
+  font-size: 0.92rem;
+  margin-bottom: 2px;
+}
+
+.work-venue {
+  font-size: 0.92rem;
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.work-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
 /* === HOME — CONTACT === */
 .contact-list {
   list-style: none;
