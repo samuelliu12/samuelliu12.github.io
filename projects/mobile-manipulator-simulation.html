@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Manipulator Simulation — Samuel Liu</title>
+  <meta name="description" content="ROS2 robot that maps an environment, navigates it autonomously, and detects what is in it — simulated in Gazebo.">
+  <link rel="canonical" href="https://samliu.com/projects/mobile-manipulator-simulation.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Samuel Liu">
+  <meta property="og:title" content="Mobile Manipulator Simulation — Samuel Liu">
+  <meta property="og:description" content="ROS2 robot that maps an environment, navigates it autonomously, and detects what is in it — simulated in Gazebo.">
+  <meta property="og:url" content="https://samliu.com/projects/mobile-manipulator-simulation.html">
+  <meta property="og:image" content="https://samliu.com/assets/images/mobile_manipulator.png">
+  <meta property="og:image:alt" content="Mobile Manipulator Simulation">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">Samuel Liu</a>
+      <ul class="nav-links">
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../experience.html">Experience</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div id="project-detail">
+      <p class="breadcrumb"><a href="../projects.html">Projects</a> / Mobile Manipulator Simulation</p>
+      <img src="../assets/images/mobile_manipulator.png" alt="Mobile Manipulator Simulation" class="detail-hero">
+      <div class="detail-header">
+        <h1 class="detail-title">Mobile Manipulator Simulation</h1>
+        <div class="detail-meta">
+          <div class="card-tags"><span class="tag tag-software">software</span></div>
+        </div>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">Summary</h2>
+        <p class="detail-text">A simulated robot that maps an unknown space, navigates it autonomously, and is being extended to recognise what is in it. A TurtleBot3 runs in Gazebo on ROS2, mapping with slam_toolbox, navigating with Nav2, and carrying a custom depth camera that feeds a YOLO detector node.</p>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">What I did</h2>
+        <ul class="detail-bullets">
+          <li>Built the simulation bringup as a self-contained ROS2 package so one launch argument selects the robot model, URDF, and topic bridge together; tuned sensor rates to run near real time.</li>
+          <li>Brought up SLAM with slam_toolbox and mapped both a stock world and a custom house world using a waypoint tour node driven by the SLAM-corrected pose.</li>
+          <li>Implemented autonomous navigation with Nav2 and AMCL against a saved map, verified with a scripted goal test instead of clicking in RViz.</li>
+          <li>Extended the stock robot into an RGBD model and cross-checked the depth against LiDAR so detections can later be projected into 3D.</li>
+          <li>Wrote a YOLO detector node that publishes standard vision_msgs detections, dropping frames rather than queueing them to keep latency bounded.</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">Future steps</h2>
+        <ul class="detail-bullets">
+          <li>Fuse depth with LiDAR to lift 2D detections into 3D on the map, so objects are remembered by location.</li>
+          <li>Filter dynamic objects like people out of the static map while still avoiding them locally.</li>
+          <li>Frontier exploration with Nav2 so the robot maps rooms beyond the one it starts in.</li>
+          <li>Add the WidowX 250 arm and drive pick-and-place with MoveIt2 from the semantic map.</li>
+          <li>LLM task planner that turns a natural language instruction into navigation goals and grasps.</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">Skills</h2>
+        <div class="detail-skills">
+          <span class="detail-skill-chip">ROS2</span>
+          <span class="detail-skill-chip">Gazebo</span>
+          <span class="detail-skill-chip">SLAM</span>
+          <span class="detail-skill-chip">Nav2</span>
+          <span class="detail-skill-chip">Python</span>
+          <span class="detail-skill-chip">YOLO11</span>
+        </div>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">Links</h2>
+        <ul class="contact-list detail-links">
+          <li><span>GitHub</span><a href="https://github.com/samuelliu12/mobile-manipulator.git" target="_blank" rel="noopener">github.com/samuelliu12/mobile-manipulator.git ↗</a></li>
+        </ul>
+      </div>
+      <div class="detail-back">
+        <a href="../projects.html">← All projects</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="mailto:syl63@cam.ac.uk">Email</a>
+      <a href="https://www.linkedin.com/in/samliu12/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/samuelliu12" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

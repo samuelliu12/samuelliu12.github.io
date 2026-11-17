@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Throttle — Samuel Liu</title>
+  <meta name="description" content="Electronic Throttle Controller for Full Blue Racing (University of Cambridge&#x27;s Formula Student Team).">
+  <link rel="canonical" href="https://samliu.com/projects/e-throttle.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Samuel Liu">
+  <meta property="og:title" content="E-Throttle — Samuel Liu">
+  <meta property="og:description" content="Electronic Throttle Controller for Full Blue Racing (University of Cambridge&#x27;s Formula Student Team).">
+  <meta property="og:url" content="https://samliu.com/projects/e-throttle.html">
+  <meta property="og:image" content="https://samliu.com/assets/images/e-throttle_board.jpg">
+  <meta property="og:image:alt" content="E-Throttle">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">Samuel Liu</a>
+      <ul class="nav-links">
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../experience.html">Experience</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div id="project-detail">
+      <p class="breadcrumb"><a href="../projects.html">Projects</a> / E-Throttle</p>
+      <img src="../assets/images/e-throttle_board.jpg" alt="E-Throttle" class="detail-hero">
+      <div class="detail-header">
+        <h1 class="detail-title">E-Throttle</h1>
+        <div class="detail-meta">
+          <div class="card-tags"><span class="tag tag-hardware">hardware</span><span class="tag tag-firmware">firmware</span></div>
+        </div>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">Summary</h2>
+        <p class="detail-text">The electronic throttle (E-Throttle) project replaces the mechanical throttle cable with an electronically controlled throttle body, which brings benefits such as improved control of the fuel/air ratio. The goal is to redesign and validate the Electronic Throttle Control for proper operation and compliance with Formula Student safety regulations.
+
+      The E-Throttle system consists of two Accelerator Pedal Position Sensors (APPS) at the pedal, two Throttle Position Sensors (TPS) with a stepper motor at the throttle body, and a central control board. This controller processes sensor inputs and implements redundant, safety-critical control in compliance with the Formula Student regulations.</p>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">What I did</h2>
+        <ul class="detail-bullets">
+          <li>Breadboard prototyped open-loop control of the stepper motor from the APPS sensors before committing to a board design.</li>
+          <li>Designed the control PCB in KiCad with hardware-level safety built in: independent watchdog timers, high-side FETs, and relays, so a firmware hang or sensor fault cuts power to the throttle actuator without relying on the microcontroller.</li>
+          <li>Assembled the board and tested each subsystem individually (power, sensor inputs, watchdog, FET and relay switching, stepper driver). All components functional.</li>
+          <li>Developing the throttle controller firmware on the ESP32 to drive the stepper motor from APPS input with closed-loop feedback from the TPS sensors.</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">Future steps</h2>
+        <ul class="detail-bullets">
+          <li>Closed-loop PID control of throttle position using TPS feedback.</li>
+          <li>Software safety features required by the regulations: plausibility checks between the redundant APPS and TPS sensors, and safe shutdown on implausible readings.</li>
+          <li>Integrate with the car and validate the full system against the Formula Student safety rules.</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">Skills</h2>
+        <div class="detail-skills">
+          <span class="detail-skill-chip">KiCad</span>
+          <span class="detail-skill-chip">PCB Design</span>
+          <span class="detail-skill-chip">ESP32</span>
+          <span class="detail-skill-chip">Arduino C++</span>
+          <span class="detail-skill-chip">Stepper Motor Control</span>
+        </div>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">Links</h2>
+        <ul class="contact-list detail-links">
+          <li><span>GitHub</span><a href="https://github.com/tongclement/FBR-E-Throttle" target="_blank" rel="noopener">github.com/tongclement/FBR-E-Throttle ↗</a></li>
+        </ul>
+      </div>
+      <div class="detail-back">
+        <a href="../projects.html">← All projects</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="mailto:syl63@cam.ac.uk">Email</a>
+      <a href="https://www.linkedin.com/in/samliu12/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/samuelliu12" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

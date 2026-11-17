@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infrared Imaging Drone — Samuel Liu</title>
+  <meta name="description" content="Quadcopter drone with downward-facing infrared camera for birds-eye thermal imaging.">
+  <link rel="canonical" href="https://samliu.com/projects/infrared-imaging-drone.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Samuel Liu">
+  <meta property="og:title" content="Infrared Imaging Drone — Samuel Liu">
+  <meta property="og:description" content="Quadcopter drone with downward-facing infrared camera for birds-eye thermal imaging.">
+  <meta property="og:url" content="https://samliu.com/projects/infrared-imaging-drone.html">
+  <meta property="og:image" content="https://samliu.com/assets/images/drone_landing_pad.png">
+  <meta property="og:image:alt" content="Infrared Imaging Drone">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">Samuel Liu</a>
+      <ul class="nav-links">
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../experience.html">Experience</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div id="project-detail">
+      <p class="breadcrumb"><a href="../projects.html">Projects</a> / Infrared Imaging Drone</p>
+      <img src="../assets/images/drone_landing_pad.png" alt="Infrared Imaging Drone" class="detail-hero">
+      <div class="detail-header">
+        <h1 class="detail-title">Infrared Imaging Drone</h1>
+        <div class="detail-meta">
+          <div class="card-tags"><span class="tag tag-hardware">hardware</span><span class="tag tag-firmware">firmware</span></div>
+        </div>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">Summary</h2>
+        <p class="detail-text">A self-built quadcopter carrying a downward-facing FLIR Lepton thermal camera, intended for birds-eye thermal imaging of the ground below. The airframe is built around a Pixhawk 2.4.8 flight controller with GPS, four ESC-driven motors, a power distribution board, and an RC receiver, and can fly either under manual radio control or autonomously along a Mission Planner route. A Raspberry Pi 4B mounted on the frame runs the thermal camera.</p>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">What I did</h2>
+        <ul class="detail-bullets">
+          <li>Assembled the quadcopter frame and soldered the electronics: Pixhawk flight controller, GPS, four ESCs and motors, power distribution board, LiPo battery, buzzer, safety switch, and RC receiver.</li>
+          <li>Calibrated the Pixhawk (accelerometer, compass, radio, ESCs) and set up autonomous missions in Mission Planner.</li>
+          <li>Designed a camera holder in Onshape to mount the FLIR Lepton and Raspberry Pi under the frame, facing downward.</li>
+          <li>Set up the thermal imaging pipeline on the Raspberry Pi using LeptonModule to drive the FLIR Lepton, with a Qt GUI for viewing and capturing images.</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">Results</h2>
+        <ul class="detail-bullets">
+          <li>Drone flies manually with the remote control or autonomously along a Mission Planner waypoint route.</li>
+          <li>Thermal camera captures clear infrared images (e.g. grass vs. brick boundary), but capture is still triggered manually rather than automatically in flight.</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">Skills</h2>
+        <div class="detail-skills">
+          <span class="detail-skill-chip">Pixhawk / ArduPilot</span>
+          <span class="detail-skill-chip">Mission Planner</span>
+          <span class="detail-skill-chip">Soldering</span>
+          <span class="detail-skill-chip">Onshape</span>
+          <span class="detail-skill-chip">Raspberry Pi</span>
+          <span class="detail-skill-chip">FLIR Lepton</span>
+          <span class="detail-skill-chip">Qt</span>
+        </div>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">Links</h2>
+        <ul class="contact-list detail-links">
+          <li><span>Video</span><a href="https://youtu.be/34Y6oeJE_qU" target="_blank" rel="noopener">youtu.be/34Y6oeJE_qU ↗</a></li>
+        </ul>
+      </div>
+      <div class="detail-back">
+        <a href="../projects.html">← All projects</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="mailto:syl63@cam.ac.uk">Email</a>
+      <a href="https://www.linkedin.com/in/samliu12/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/samuelliu12" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

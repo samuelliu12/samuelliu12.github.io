@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luna: Lunar Rock Collection Robot — Samuel Liu</title>
+  <meta name="description" content="RoboHacks (YC Hackathon) Project: an autonomous robot that identifies, collects, and sorts rocks built with Innate&#x27;s MARS Robot.">
+  <link rel="canonical" href="https://samliu.com/projects/luna-lunar-rock-collection-robot.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Samuel Liu">
+  <meta property="og:title" content="Luna: Lunar Rock Collection Robot — Samuel Liu">
+  <meta property="og:description" content="RoboHacks (YC Hackathon) Project: an autonomous robot that identifies, collects, and sorts rocks built with Innate&#x27;s MARS Robot.">
+  <meta property="og:url" content="https://samliu.com/projects/luna-lunar-rock-collection-robot.html">
+  <meta property="og:image" content="https://samliu.com/assets/images/lunar_robot.jpg">
+  <meta property="og:image:alt" content="Luna: Lunar Rock Collection Robot">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">Samuel Liu</a>
+      <ul class="nav-links">
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../experience.html">Experience</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div id="project-detail">
+      <p class="breadcrumb"><a href="../projects.html">Projects</a> / Luna: Lunar Rock Collection Robot</p>
+      <img src="../assets/images/lunar_robot.jpg" alt="Luna: Lunar Rock Collection Robot" class="detail-hero">
+      <div class="detail-header">
+        <h1 class="detail-title">Luna: Lunar Rock Collection Robot</h1>
+        <div class="detail-meta">
+          <div class="card-tags"><span class="tag tag-hardware">hardware</span><span class="tag tag-firmware">firmware</span><span class="tag tag-software">software</span></div>
+        </div>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">Summary</h2>
+        <p class="detail-text">Luna is a rock-collection rover built in a weekend at YC RoboHacks (~10% acceptance) on top of Innate&#x27;s MARS robot. The robot drives over a simulated lunar surface, spots rocks with a vision-language model and object detection pipeline, picks them up with a modified gripper, and drops them into onboard sorting bins. The picking motion itself is a learned policy rather than a scripted trajectory, trained from teleoperation demonstrations and exposed as a skill the robot&#x27;s VLM agent can call.</p>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">What I did</h2>
+        <ul class="detail-bullets">
+          <li>Prototyped the hardware additions: grippers sized for the rock samples, sorting bins mounted on the chassis, and a force-sensitive resistor (FSR) embedded in the gripper.</li>
+          <li>Collected ~50 teleoperation demonstrations of rock picking and trained an ACT (Action Chunking Transformer) policy on them.</li>
+          <li>Deployed the trained policy as a skill for the robot&#x27;s VLM agent, so the high-level planner decides what to pick and the learned policy handles how.</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">Results</h2>
+        <ul class="detail-bullets">
+          <li>Demo: the rover finds, picks, and sorts rocks autonomously on the sandbox surface.</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">Skills</h2>
+        <div class="detail-skills">
+          <span class="detail-skill-chip">Onshape</span>
+          <span class="detail-skill-chip">Rapid Prototyping</span>
+          <span class="detail-skill-chip">Teleoperation</span>
+          <span class="detail-skill-chip">ACT / Imitation Learning</span>
+          <span class="detail-skill-chip">Python</span>
+          <span class="detail-skill-chip">VLM Agents</span>
+        </div>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">Links</h2>
+        <ul class="contact-list detail-links">
+          <li><span>Video</span><a href="https://www.youtube.com/watch?v=fFW-9yVCM8o" target="_blank" rel="noopener">youtube.com/watch?v=fFW-9yVCM8o ↗</a></li>
+          <li><span>GitHub</span><a href="https://github.com/pkumar1025/robohacks_prototype" target="_blank" rel="noopener">github.com/pkumar1025/robohacks_prototype ↗</a></li>
+        </ul>
+      </div>
+      <div class="detail-back">
+        <a href="../projects.html">← All projects</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="mailto:syl63@cam.ac.uk">Email</a>
+      <a href="https://www.linkedin.com/in/samliu12/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/samuelliu12" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

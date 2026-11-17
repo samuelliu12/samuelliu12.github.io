@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pan-Tilt-Zoom Tracking Camera — Samuel Liu</title>
+  <meta name="description" content="PTZ camera with realtime object detection and tracking.">
+  <link rel="canonical" href="https://samliu.com/projects/pan-tilt-zoom-tracking-camera.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Samuel Liu">
+  <meta property="og:title" content="Pan-Tilt-Zoom Tracking Camera — Samuel Liu">
+  <meta property="og:description" content="PTZ camera with realtime object detection and tracking.">
+  <meta property="og:url" content="https://samliu.com/projects/pan-tilt-zoom-tracking-camera.html">
+  <meta property="og:image" content="https://samliu.com/assets/images/ptz.jpg">
+  <meta property="og:image:alt" content="Pan-Tilt-Zoom Tracking Camera">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">Samuel Liu</a>
+      <ul class="nav-links">
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../experience.html">Experience</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div id="project-detail">
+      <p class="breadcrumb"><a href="../projects.html">Projects</a> / Pan-Tilt-Zoom Tracking Camera</p>
+      <img src="../assets/images/ptz.jpg" alt="Pan-Tilt-Zoom Tracking Camera" class="detail-hero" style="object-position: left center">
+      <div class="detail-header">
+        <h1 class="detail-title">Pan-Tilt-Zoom Tracking Camera</h1>
+        <div class="detail-meta">
+          <div class="card-tags"><span class="tag tag-hardware">hardware</span><span class="tag tag-firmware">firmware</span><span class="tag tag-software">software</span></div>
+        </div>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">Summary</h2>
+        <p class="detail-text">A camera that finds an object with YOLO and physically turns to keep it centered. A webcam sits on 3D printed mounts driven by a stepper motor for pan and a servo for tilt, both controlled by an Arduino, with a laptop running detection and control.</p>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">What I did</h2>
+        <ul class="detail-bullets">
+          <li>Built the vision pipeline in Python with OpenCV and YOLO, smoothing the detected target position to avoid jitter.</li>
+          <li>Designed the control logic: velocity control for the pan stepper and eased position control for the tilt servo, so motion stays smooth despite a discrete command stream.</li>
+          <li>Added firmware safety interlocks: a watchdog that stops motion if commands drop out, plus hard limits on both axes.</li>
+          <li>Implemented automatic digital zoom that keeps the subject at a constant apparent size, with a deadband so the crop doesn&#x27;t breathe on a still target.</li>
+          <li>Designed and 3D printed the mounts in Onshape, built the motor and Arduino circuit, and calibrated the axes before closing the loop.</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">Future steps</h2>
+        <ul class="detail-bullets">
+          <li>Depth-based zoom using a monocular depth model, so framing follows actual distance rather than bounding box size.</li>
+          <li>A self-contained build on a PCB with enclosed wiring and aligned mounts.</li>
+          <li>Natural language control for picking the subject and composing the shot.</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">Skills</h2>
+        <div class="detail-skills">
+          <span class="detail-skill-chip">Python</span>
+          <span class="detail-skill-chip">OpenCV</span>
+          <span class="detail-skill-chip">YOLO11</span>
+          <span class="detail-skill-chip">Arduino C++</span>
+          <span class="detail-skill-chip">Onshape</span>
+          <span class="detail-skill-chip">3D Printing</span>
+        </div>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">Links</h2>
+        <ul class="contact-list detail-links">
+          <li><span>Video</span><a href="https://youtu.be/Xo-vUbaKPRw" target="_blank" rel="noopener">youtu.be/Xo-vUbaKPRw ↗</a></li>
+          <li><span>GitHub</span><a href="https://github.com/samuelliu12/ptz_tracking_camera" target="_blank" rel="noopener">github.com/samuelliu12/ptz_tracking_camera ↗</a></li>
+        </ul>
+      </div>
+      <div class="detail-back">
+        <a href="../projects.html">← All projects</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="mailto:syl63@cam.ac.uk">Email</a>
+      <a href="https://www.linkedin.com/in/samliu12/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/samuelliu12" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

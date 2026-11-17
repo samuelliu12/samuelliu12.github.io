@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Experience — Samuel Liu</title>
   <meta name="description" content="Work experience and extracurricular roles by Samuel Liu.">
+  <link rel="canonical" href="https://samliu.com/experience.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Samuel Liu">
+  <meta property="og:title" content="Experience — Samuel Liu">
+  <meta property="og:description" content="Work experience and extracurricular roles by Samuel Liu.">
+  <meta property="og:url" content="https://samliu.com/experience.html">
+  <meta property="og:image" content="https://samliu.com/assets/images/sam_pfp.jpg">
+  <meta name="twitter:card" content="summary">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
@@ -33,7 +41,60 @@
     </div>
 
     <div class="card-grid" id="experience-grid">
-      <!-- Cards injected by js/main.js from data/experience.json -->
+      <!-- BUILD:experience -->
+      <div class="card-entry" data-tags="internship">
+        <article class="card">
+          <div class="card-body">
+            <div class="card-tags"><span class="tag tag-internship">internship</span></div>
+            <h2 class="card-title">Member of Technical Staff, Robotics Research Intern</h2>
+            <p class="card-meta">Industrial Next (YC W22)</p>
+            <p class="card-dates">Jun 2026 — Oct 2026</p>
+            <p class="card-desc">Developed a Real2Sim2Real pipeline with world and behavior grounding for sim-and-real co-training.</p>
+            <ul class="card-bullets"><li>Integrated Manus glove and Vive tracker teleoperation for three dexterous hands (Psyonic, OmniHand, Wuji) into the company ROS2 stack.</li><li>Collected teleop data and post-trained foundation models (GR00T 1.7, π0.5) on dexterous tasks.</li><li>Ran a 2×2 world and behavior grounding experiment (MimicGen, Isaac Sim); fully grounded co-training beat real-only training on a dynamic pick-and-sort task, 86% vs 52% success.</li><li>First-authored a paper on Real2Sim2Real grounding, accepted to 4 CoRL workshops.</li></ul>
+            <div class="card-links"><a href="https://arxiv.org/abs/2610.00821" class="card-link" target="_blank" rel="noopener">Paper ↗</a><a href="https://industrialnext.github.io/r2s2r-grounding/" class="card-link" target="_blank" rel="noopener">Project Page ↗</a></div>
+          </div>
+        </article>
+      </div>
+      <div class="card-entry" data-tags="internship">
+        <article class="card">
+          <div class="card-body">
+            <div class="card-tags"><span class="tag tag-internship">internship</span></div>
+            <h2 class="card-title">Robotics Intern</h2>
+            <p class="card-meta">Vantage Robotics</p>
+            <p class="card-dates">Mar 2026 — Apr 2026</p>
+            <p class="card-desc">Developed automated drone sensor calibration pipeline using 5-DOF robotic arm.</p>
+            <div class="card-links"></div>
+          </div>
+        </article>
+      </div>
+      <div class="card-entry" data-tags="research">
+        <article class="card">
+          <div class="card-body">
+            <div class="card-tags"><span class="tag tag-research">research</span></div>
+            <h2 class="card-title">Mechatronics Engineering Researcher</h2>
+            <p class="card-meta">Mechanical Systems Control Lab / UC Berkeley</p>
+            <p class="card-dates">Apr 2025 — Sep 2025</p>
+            <p class="card-desc">Developed a syringe pump system with hydraulic and pneumatic actuation for soft robotic applications.</p>
+            <ul class="card-bullets"><li>Built the low-level control stack on an ESP32 in C++ (Arduino IDE).</li><li>Designed, calibrated, and tested a pressure sensor circuit with amplifier and filter stages for reliable closed-loop feedback.</li><li>Programmed a PID pressure controller: roughly ±1 kPa precision (~1.0% span error) pneumatic and ±2 kPa (~0.75% span error) hydraulic.</li></ul>
+            <div class="card-links"></div>
+          </div>
+        </article>
+      </div>
+      <div class="card-entry" data-tags="research">
+        <article class="card">
+          <div class="card-body">
+            <div class="card-tags"><span class="tag tag-research">research</span></div>
+            <h2 class="card-title">Robotics Research Intern</h2>
+            <p class="card-meta">Boston University Robotics Lab</p>
+            <p class="card-dates">Jun 2024 — Aug 2024</p>
+            <p class="card-desc">Implemented and evaluated a vision-based approach for collaborative mapping between two robots (ROS2, Python).</p>
+            <ul class="card-bullets"><li>Built two ROSBots and implemented follow-the-leader coordination using AprilTag detection and a PD controller for relative localization.</li><li>Chained frame transforms between adjacent AprilTags to merge both robots&#x27; maps into one.</li><li>Collaborative mapping beat individual mapping in accuracy: 2.05 m vs 2.69 m RMSE.</li><li>Presented results as a poster at the BU RISE symposium.</li></ul>
+            <div class="card-links"><a href="https://www.bu.edu/summer/files/2024/10/Liu_Samuel_POSTER.pdf" class="card-link" target="_blank" rel="noopener">Poster ↗</a><a href="https://samuelrise2024.blogspot.com/" class="card-link" target="_blank" rel="noopener">Blog ↗</a></div>
+          </div>
+        </article>
+      </div>
+      <p class="empty-state" data-label="experience" hidden></p>
+      <!-- /BUILD:experience -->
     </div>
   </main>
 

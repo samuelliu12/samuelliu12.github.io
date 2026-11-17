@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Robot Learning — Samuel Liu</title>
+  <meta name="description" content="Sandbox for learning robot learning: a simulated car learns to drive to a goal through behavior cloning, DAgger, PPO, and residual RL.">
+  <link rel="canonical" href="https://samliu.com/projects/learning-robot-learning.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Samuel Liu">
+  <meta property="og:title" content="Learning Robot Learning — Samuel Liu">
+  <meta property="og:description" content="Sandbox for learning robot learning: a simulated car learns to drive to a goal through behavior cloning, DAgger, PPO, and residual RL.">
+  <meta property="og:url" content="https://samliu.com/projects/learning-robot-learning.html">
+  <meta property="og:image" content="https://samliu.com/assets/images/robot_learning_residual.png">
+  <meta property="og:image:alt" content="Learning Robot Learning">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">Samuel Liu</a>
+      <ul class="nav-links">
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../experience.html">Experience</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div id="project-detail">
+      <p class="breadcrumb"><a href="../projects.html">Projects</a> / Learning Robot Learning</p>
+      <img src="../assets/images/robot_learning_residual.png" alt="Learning Robot Learning" class="detail-hero">
+      <div class="detail-header">
+        <h1 class="detail-title">Learning Robot Learning</h1>
+        <div class="detail-meta">
+          <div class="card-tags"><span class="tag tag-software">software</span></div>
+        </div>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">Summary</h2>
+        <p class="detail-text">A step-by-step sandbox for learning the core methods of robot learning on one small task. A simulated unicycle car with noisy sensors has to turn around and drive to a random goal about 3 m away. It builds up from a neural network written by hand in NumPy, through behavior cloning and DAgger, to PPO. The final stage is residual RL, where PPO may only nudge a frozen behavior-cloned policy within a hard-bounded window.</p>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">What I did</h2>
+        <ul class="detail-bullets">
+          <li>Wrote an MLP from scratch in NumPy (forward pass, backprop, SGD) and used it to clone a demonstrator, then fixed compounding error with DAgger.</li>
+          <li>Built the unicycle environment and a Gymnasium wrapper, plus three demonstrators: a smooth P-controller, a &#x27;turn then drive&#x27; policy, and an &#x27;x then y&#x27; policy that mimics human driving styles.</li>
+          <li>Trained a Stable-Baselines3 PPO baseline from scratch with no demonstrations.</li>
+          <li>Trained a PyTorch behavior cloning policy on 50 human-style demos, using a trajectory-level train/val split and a network that rewrites observations into the car&#x27;s body frame.</li>
+          <li>Implemented residual PPO, a = μ_BC(obs) + [dv, dω] ⊙ a_PPO, with the bound enforced as a hard clip instead of a reward penalty, and swept the speed bound dv to measure how far the policy drifts from the demonstrator as the constraint loosens.</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">Skills</h2>
+        <div class="detail-skills">
+          <span class="detail-skill-chip">Python</span>
+          <span class="detail-skill-chip">NumPy</span>
+          <span class="detail-skill-chip">PyTorch</span>
+          <span class="detail-skill-chip">Behavior Cloning / DAgger</span>
+          <span class="detail-skill-chip">PPO (Stable-Baselines3)</span>
+          <span class="detail-skill-chip">Residual RL</span>
+          <span class="detail-skill-chip">Gymnasium</span>
+        </div>
+      </div>
+      <div class="detail-section">
+        <h2 class="section-label">Links</h2>
+        <ul class="contact-list detail-links">
+          <li><span>GitHub</span><a href="https://github.com/samuelliu12/learning-robot-learning" target="_blank" rel="noopener">github.com/samuelliu12/learning-robot-learning ↗</a></li>
+        </ul>
+      </div>
+      <div class="detail-back">
+        <a href="../projects.html">← All projects</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="mailto:syl63@cam.ac.uk">Email</a>
+      <a href="https://www.linkedin.com/in/samliu12/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/samuelliu12" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

@@ -6,6 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects — Samuel Liu</title>
   <meta name="description" content="Robotics, mechatronics, and firmware projects by Samuel Liu.">
+  <link rel="canonical" href="https://samliu.com/projects.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Samuel Liu">
+  <meta property="og:title" content="Projects — Samuel Liu">
+  <meta property="og:description" content="Robotics, mechatronics, and firmware projects by Samuel Liu.">
+  <meta property="og:url" content="https://samliu.com/projects.html">
+  <meta property="og:image" content="https://samliu.com/assets/images/insight.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
@@ -36,7 +44,126 @@
     </div>
 
     <div class="card-grid" id="card-grid">
-      <!-- Cards injected by js/main.js from data/projects.json -->
+      <!-- BUILD:projects -->
+      <div class="card-entry" data-tags="software,hardware,firmware">
+        <a href="projects/insight.html" class="card-link-wrapper">
+          <article class="card">
+            <img src="assets/images/insight.jpg" alt="InSight" class="card-img" loading="lazy" style="object-position: center 17%">
+            <div class="card-body">
+              <div class="card-tags"><span class="tag tag-software">software</span><span class="tag tag-hardware">hardware</span><span class="tag tag-firmware">firmware</span></div>
+              <h2 class="card-title">InSight</h2>
+              <p class="card-desc">Cal Hacks 13.0 Project: a robot arm with a 3D pen that turns any image into raised tactile relief for blind and low-vision people.</p>
+              <div class="card-links"><a href="https://devpost.com/software/insight-vcuo9i" class="card-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">Devpost ↗</a><a href="https://youtu.be/VTOk2mAgLuI?si=6LyVGNyYb-5TY6Qa" class="card-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">Video ↗</a></div>
+            </div>
+          </article>
+        </a>
+      </div>
+      <div class="card-entry" data-tags="software">
+        <a href="projects/learning-robot-learning.html" class="card-link-wrapper">
+          <article class="card">
+            <img src="assets/images/robot_learning.png" alt="Learning Robot Learning" class="card-img" loading="lazy" style="object-position: center top">
+            <div class="card-body">
+              <div class="card-tags"><span class="tag tag-software">software</span></div>
+              <h2 class="card-title">Learning Robot Learning</h2>
+              <p class="card-desc">Sandbox for learning robot learning: a simulated car learns to drive to a goal through behavior cloning, DAgger, PPO, and residual RL.</p>
+              <div class="card-links"><a href="https://github.com/samuelliu12/learning-robot-learning" class="card-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">GitHub ↗</a></div>
+            </div>
+          </article>
+        </a>
+      </div>
+      <div class="card-entry" data-tags="hardware,firmware,software">
+        <a href="projects/luna-lunar-rock-collection-robot.html" class="card-link-wrapper">
+          <article class="card">
+            <img src="assets/images/lunar_robot.jpg" alt="Luna: Lunar Rock Collection Robot" class="card-img" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags"><span class="tag tag-hardware">hardware</span><span class="tag tag-firmware">firmware</span><span class="tag tag-software">software</span></div>
+              <h2 class="card-title">Luna: Lunar Rock Collection Robot</h2>
+              <p class="card-desc">RoboHacks (YC Hackathon) Project: an autonomous robot that identifies, collects, and sorts rocks built with Innate&#x27;s MARS Robot.</p>
+              <div class="card-links"><a href="https://www.youtube.com/watch?v=fFW-9yVCM8o" class="card-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">Video ↗</a><a href="https://github.com/pkumar1025/robohacks_prototype" class="card-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">GitHub ↗</a></div>
+            </div>
+          </article>
+        </a>
+      </div>
+      <div class="card-entry" data-tags="hardware,firmware,software">
+        <a href="projects/pan-tilt-zoom-tracking-camera.html" class="card-link-wrapper">
+          <article class="card">
+            <img src="assets/images/ptz.jpg" alt="Pan-Tilt-Zoom Tracking Camera" class="card-img" loading="lazy" style="object-position: left center">
+            <div class="card-body">
+              <div class="card-tags"><span class="tag tag-hardware">hardware</span><span class="tag tag-firmware">firmware</span><span class="tag tag-software">software</span></div>
+              <h2 class="card-title">Pan-Tilt-Zoom Tracking Camera</h2>
+              <p class="card-desc">PTZ camera with realtime object detection and tracking.</p>
+              <div class="card-links"><a href="https://youtu.be/Xo-vUbaKPRw" class="card-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">Video ↗</a><a href="https://github.com/samuelliu12/ptz_tracking_camera" class="card-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">GitHub ↗</a></div>
+            </div>
+          </article>
+        </a>
+      </div>
+      <div class="card-entry" data-tags="hardware,firmware">
+        <a href="projects/e-throttle.html" class="card-link-wrapper">
+          <article class="card">
+            <img src="assets/images/e-throttle_board.jpg" alt="E-Throttle" class="card-img" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags"><span class="tag tag-hardware">hardware</span><span class="tag tag-firmware">firmware</span></div>
+              <h2 class="card-title">E-Throttle</h2>
+              <p class="card-desc">Electronic Throttle Controller for Full Blue Racing (University of Cambridge&#x27;s Formula Student Team).</p>
+              <div class="card-links"><a href="https://github.com/tongclement/FBR-E-Throttle" class="card-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">GitHub ↗</a></div>
+            </div>
+          </article>
+        </a>
+      </div>
+      <div class="card-entry" data-tags="software">
+        <a href="projects/mobile-manipulator-simulation.html" class="card-link-wrapper">
+          <article class="card">
+            <img src="assets/images/mobile_manipulator.png" alt="Mobile Manipulator Simulation" class="card-img" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags"><span class="tag tag-software">software</span></div>
+              <h2 class="card-title">Mobile Manipulator Simulation</h2>
+              <p class="card-desc">ROS2 robot that maps an environment, navigates it autonomously, and detects what is in it — simulated in Gazebo.</p>
+              <div class="card-links"><a href="https://github.com/samuelliu12/mobile-manipulator.git" class="card-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">GitHub ↗</a></div>
+            </div>
+          </article>
+        </a>
+      </div>
+      <div class="card-entry" data-tags="hardware,firmware">
+        <a href="projects/infrared-imaging-drone.html" class="card-link-wrapper">
+          <article class="card">
+            <img src="assets/images/drone.jpg" alt="Infrared Imaging Drone" class="card-img" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags"><span class="tag tag-hardware">hardware</span><span class="tag tag-firmware">firmware</span></div>
+              <h2 class="card-title">Infrared Imaging Drone</h2>
+              <p class="card-desc">Quadcopter drone with downward-facing infrared camera for birds-eye thermal imaging.</p>
+              <div class="card-links"><a href="https://youtu.be/34Y6oeJE_qU" class="card-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">Video ↗</a></div>
+            </div>
+          </article>
+        </a>
+      </div>
+      <div class="card-entry" data-tags="hardware">
+        <a href="projects/led-magnetometer.html" class="card-link-wrapper">
+          <article class="card">
+            <img src="assets/images/magnetometer.jpg" alt="LED Magnetometer" class="card-img" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags"><span class="tag tag-hardware">hardware</span></div>
+              <h2 class="card-title">LED Magnetometer</h2>
+              <p class="card-desc">Analog signal-conditioning circuit that displays magnetic field strength on a 4-level LED bar.</p>
+              <div class="card-links"><a href="https://www.youtube.com/watch?v=koqMYdsBsrs" class="card-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">Video ↗</a></div>
+            </div>
+          </article>
+        </a>
+      </div>
+      <div class="card-entry" data-tags="software">
+        <a href="projects/roller-coaster-modeling-and-simulation.html" class="card-link-wrapper">
+          <article class="card">
+            <img src="assets/images/roller_coaster.png" alt="Roller Coaster Modeling and Simulation" class="card-img" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags"><span class="tag tag-software">software</span></div>
+              <h2 class="card-title">Roller Coaster Modeling and Simulation</h2>
+              <p class="card-desc">CAD design a roller coaster and simulate its movement along a track.</p>
+              <div class="card-links"><a href="https://www.youtube.com/watch?v=lpSr80wKzYY" class="card-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">Video ↗</a></div>
+            </div>
+          </article>
+        </a>
+      </div>
+      <p class="empty-state" data-label="projects" hidden></p>
+      <!-- /BUILD:projects -->
     </div>
   </main>
 
