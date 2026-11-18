@@ -100,7 +100,7 @@
       "Deployed the trained policy as a skill for the robot's VLM agent, so the high-level planner decides what to pick and the learned policy handles how."
     ],
     "results": [
-      "Demo: the rover finds, picks, and sorts rocks autonomously on the sandbox surface."
+      "Demo: given a one-line instruction, the rover scans for rocks, drives to one and attempts the pick with the learned policy, with no step-by-step control from the operator."
     ],
     "images": [],
     "skills": [
